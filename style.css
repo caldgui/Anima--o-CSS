@@ -1,0 +1,77 @@
+@keyframes spin {
+    to{
+        transform: rotate(0deg);
+    }
+    from{
+        transform: rotate(350deg);
+    }
+}
+
+@keyframes background-transform {
+    from{
+        background-color: #e2e2e2;
+    }
+    to{
+        background-color: aquamarine;
+    }
+}
+
+@keyframes concluded-appear {
+    from{
+        display: none;
+    }
+    to{
+        display: flex;
+    }
+}
+
+body{
+    height: 100vh;
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn-primary{
+    height: 56px;
+    width: 250px;
+    background-color: #e2e2e2;
+    border-radius: 0.25rem;
+    padding: 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: background-transform 400ms linear;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+.loading-spinner{
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    animation: spin 1s linear infinite;
+
+}
+
+.wrapper .concluded{
+    position: absolute;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine;
+    animation-name: concluded-appear;
+    animation-duration: 400ms;
+    animation-timing-function: linear;
+    animation-delay: 3s;
+    animation-fill-mode: backwards;
+}
